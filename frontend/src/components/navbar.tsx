@@ -69,7 +69,7 @@ export function NavBar() {
     });
 
     client.initProvider(ProviderType.Google, {
-      // redirectUri: "https://useflame.xyz",
+      
        redirectUri: "http://localhost:3000",
     });
 
@@ -128,9 +128,9 @@ export function NavBar() {
       <SignInModal />
       <HStack>
         <HStack as={"button"} onClick={() => navigate("/")}>
-          <Image src="/logo.png" w="10" borderRadius={7} />
-          <Text fontSize="xl" color="#fe9800" fontWeight="bold">
-            Flame Wallet
+          <Image src="/logo.png" w="6" h='7' borderRadius={2} marginLeft={8} />
+          <Text fontSize="2xl" color="#4285F4" fontWeight="extrabold" marginTop={2}>
+            end
           </Text>
         </HStack>
         {email !== "" && walletAddress ? (
@@ -150,12 +150,17 @@ export function NavBar() {
               icon={<ArrowRightIcon size={20} />}
               onClick={searchAccount}
             />
+
+            
+
             {search ? (
               <Avatar
                 size="sm"
                 src={ search.endsWith("@gmail.com") ? `https://noun-api.com/beta/pfp?name=${search}` : `https://noun-api.com/beta/pfp?name=${search}@gmail.com`}              />
             ) : (
-              <></>
+              <>
+              
+              </>
             )}
           </HStack>
         ) : (
@@ -244,7 +249,7 @@ export function NavBar() {
               </MenuList>
             </Menu>
           ) : (
-            <Button variant="solid" bg={'#fe9800'} alignSelf="center" onClick={onOpen}>
+            <Button variant="solid" bg={'#4285F4'} alignSelf="center" onClick={onOpen}>
               <Text>Sign in</Text>
             </Button>
           )}

@@ -71,7 +71,7 @@ export const App = () => {
 
   const navigate = useNavigate();
 
-  const {colorMode} = useColorMode();
+  const { colorMode } = useColorMode();
 
   const [transferData, setTransferData] = useState<TransferData>({
     to: "",
@@ -199,7 +199,7 @@ export const App = () => {
               minW="10%"
               alignItems="flex-start"
               borderRadius={15}
-              bg={colorMode == 'dark' ? '#050505' : '#f5f5f5'}
+              bg={colorMode == "dark" ? "#050505" : "#f5f5f5"}
               boxShadow="16px 16px 35px #fe980055, -16px -16px 35px #af2e0455"
             >
               <Heading size="lg">Send Funds</Heading>
@@ -219,13 +219,19 @@ export const App = () => {
                         });
                       }}
                     />
-                    <InputRightAddon children="@gmail.com" bg={colorMode == 'dark' ? "#212121" : '#d9d9d9'} />
+                    <InputRightAddon
+                      children="@gmail.com"
+                      bg={colorMode == "dark" ? "#212121" : "#d9d9d9"}
+                    />
                   </InputGroup>
                 </FormControl>
                 <FormControl w="300px">
                   <FormLabel>Amount</FormLabel>
                   <InputGroup variant="unstyled">
-                    <InputLeftAddon bg={colorMode == 'dark' ? "#050505" : '#f5f5f5'} p={0}>
+                    <InputLeftAddon
+                      bg={colorMode == "dark" ? "#050505" : "#f5f5f5"}
+                      p={0}
+                    >
                       {/* <Select
                         placeholder=""
                         border=""
@@ -256,11 +262,17 @@ export const App = () => {
                           />
                           {tokenChoice.symbol}
                         </MenuButton>
-                        <MenuList minW="min" bg={colorMode == 'dark' ? "#050505" : '#f5f5f5'}>
+                        <MenuList
+                          minW="min"
+                          bg={colorMode == "dark" ? "#050505" : "#f5f5f5"}
+                        >
                           {tokens.tokens.map((token: any, index: number) => (
                             <MenuItem
-                              bg={colorMode == 'dark' ? "#050505" : '#f5f5f5'}
-                              _hover={{ bg: colorMode == 'dark' ? "gray.800" : 'gray.300' }}
+                              bg={colorMode == "dark" ? "#050505" : "#f5f5f5"}
+                              _hover={{
+                                bg:
+                                  colorMode == "dark" ? "gray.800" : "gray.300",
+                              }}
                               key={index}
                               onClick={() => {
                                 setTokenChoice(token);
@@ -296,7 +308,7 @@ export const App = () => {
                 <Button
                   w="full"
                   mt={5}
-                  variant={'outline'}
+                  variant={"outline"}
                   borderWidth={1}
                   onClick={onOpen}
                   disabled={!transferData.to.endsWith("@gmail.com")}
@@ -307,37 +319,93 @@ export const App = () => {
             </VStack>
           </VStack>
         ) : (
-          <VStack
-            spacing={8}
-            h="100%"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Text fontSize={'4xl'} fontFamily={'Montserrat'} fontWeight={'500'}>Send crypto to any gmail</Text>
-            <HStack>
-              <Input
-                placeholder="Search for a Google Account..."
-                onChange={(e: any) => {
-                  setSearch(e.target.value);
-                }}
-                onKeyDown={(e: any) => {
-                  if (e.key === "Enter") {
-                    searchAccount();
-                  }
-                }}
-              />
-              <IconButton
-                aria-label="search"
-                icon={<ArrowRightIcon size={20} />}
-                onClick={searchAccount}
-              />
-            </HStack>
-          </VStack>
+          <>
+            <VStack
+              spacing={8}
+              h="60%"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Text
+                fontSize={"4xl"}
+                fontFamily={"Montserrat"}
+                fontWeight={"500"}
+              >
+                Send crypto to any gmail
+              </Text>
+              <HStack>
+                <Input
+                  placeholder="Search for a Google Account..."
+                  onChange={(e: any) => {
+                    setSearch(e.target.value);
+                  }}
+                  onKeyDown={(e: any) => {
+                    if (e.key === "Enter") {
+                      searchAccount();
+                    }
+                  }}
+                />
+                <IconButton
+                  aria-label="search"
+                  icon={<ArrowRightIcon size={20} />}
+                  onClick={searchAccount}
+                />
+              </HStack>
+            </VStack>
+            {/* "How" Section */}
+            <Text
+              fontFamily={"Montserrat"}
+              fontWeight="bold"
+              fontSize="xl"
+              mt="10"
+            >
+              How to use Send:
+            </Text>
+            <Box display="flex" justifyContent="space-between" mt="4" mx='10'>
+              {/* Step 1 */}
+              <Box flex="1" mr="4">
+                <Text fontFamily={"Montserrat"} fontSize="md" fontWeight="semibold">1. Sign In</Text>
+                <Text fontFamily={"Montserrat"} fontSize="sm">
+                  "Sign in using your Gmail account to begin using Send."
+                </Text>
+              </Box>
+
+              {/* Step 2 */}
+              <Box flex="1" mr="4">
+                <Text fontFamily={"Montserrat"} fontSize="md" fontWeight="semibold">2. Send address</Text>
+                <Text fontFamily={"Montserrat"} fontSize="sm">
+                  a unique address is automatically created and bounded to your
+                  email using the Safe Factory contract's Create2 pattern.
+                </Text>
+              </Box>
+
+              {/* Step 3 */}
+              <Box flex="1" mr="4">
+                <Text fontFamily={"Montserrat"} fontSize="md" fontWeight="semibold">3. Fund your Safe address</Text>
+                <Text fontFamily={"Montserrat"} fontSize="sm">
+                  Fund your Send address to start using it for transactions and
+                  other functions."
+                </Text>
+              </Box>
+
+              {/* Step 4 */}
+              <Box flex="1">
+                <Text fontFamily={"Montserrat"} fontSize="md" fontWeight="semibold">4. Send to any email</Text>
+                <Text fontFamily={"Montserrat"} fontSize="sm">
+                  Voila! you can now send tokens to any email address. We utilize the
+                  Gelato SDK to automate transaction execution, eliminating the
+                  need for you to pay gas fees.
+                </Text>
+              </Box>
+            </Box>
+          </>
         )}
       </Box>
 
       <Modal size="lg" isOpen={isOpen} isCentered={true} onClose={onClose}>
-        <ModalOverlay bg={colorMode == 'dark' ? "blackAlpha.800" : 'blackAlpha.200'} />
+        <ModalOverlay
+          bg={colorMode == "dark" ? "blackAlpha.800" : "blackAlpha.200"}
+        />
         <ModalContent mx={4} p={10}>
           <ModalCloseButton />
           <ModalHeader>Transaction Details</ModalHeader>

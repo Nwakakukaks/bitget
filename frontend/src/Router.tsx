@@ -17,6 +17,7 @@ import { Contract, providers, utils } from "ethers";
 import config from "./config.json";
 import { getSafeAddress } from "./hooks/predictSafe";
 
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -195,6 +196,10 @@ const router = createBrowserRouter([
         }
       },
       children: [
+        // {
+        //   path: "/",
+        //   element: <Intro />,
+        // },
         {
           path: "/",
           element: <App />,

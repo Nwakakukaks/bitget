@@ -11,7 +11,7 @@ export function Layout() {
         <NavBar />
         <Outlet />
         <Alert bg={colorMode == 'dark' ? '#050505' : '#f5f5f5'} variant='subtle'>
-          <Text as="b" fontSize={'sm'}>Built with ❤️ by <a style={{textDecoration: 'underline'}} href={'https://twitter.com/cesarhuret'}>@cesarhuret</a> and <a style={{textDecoration: 'underline'}} href={'https://twitter.com/leo_ryuta'}>@leo_ryuta</a></Text>
+          
         </Alert>
       </Grid>
   );

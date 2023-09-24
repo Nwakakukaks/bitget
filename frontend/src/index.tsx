@@ -3,7 +3,6 @@ import * as React from "react"
 import * as ReactDOM from "react-dom/client"
 import { App } from "./pages/App"
 import reportWebVitals from "./reportWebVitals"
-import * as serviceWorker from "./serviceWorker"
 import { RouterProvider } from "react-router-dom"
 import router from "./Router"
 import theme from "./theme"
@@ -28,6 +27,5 @@ root.render(
   </React.StrictMode>,
 )
 
-serviceWorker.unregister()
 reportWebVitals()
 
