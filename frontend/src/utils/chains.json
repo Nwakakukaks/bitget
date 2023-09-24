@@ -1,0 +1,52 @@
+{
+  "chains": [
+    {
+      "name": "Goerli",
+      "gnosisName": "goerli",
+      "litName": "goerli",
+      "symbol": "ETH",
+      "id": 5,
+      "image_url": "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880",
+      "rpc_endpoint": "https://ethereum-goerli.publicnode.com",
+      "module": "0xa72c89B59433b4fb9e72034851A0c5DcB423d8fe",
+      "gelato": "ehGvXRr8invWVeTAjkJkDBLT8bpB9QY2XqPqjXn4tes_",
+      "gasPrice": "20"
+    },
+    {
+      "name": "Polygon",
+      "gnosisName": "polygon",
+      "litName": "polygon",
+      "symbol": "MATIC",
+      "id": 137,
+      "image_url":"https://assets.coingecko.com/coins/images/4713/small/matic-token-icon.png?1624446912",
+      "rpc_endpoint": "https://polygon.llamarpc.com",
+      "module": "0x1971E01c4Afc555A52c248Cbe1568fbCbbB8d6A6",
+      "gelato": "qw6_32acbe_4KOfGF9Ph1sOWWFACCx07vktRg5DKOIA_",
+      "gasPrice": "150"
+    },
+    {
+      "name": "Celo",
+      "gnosisName": "celo",
+      "litName": "celo",
+      "symbol": "CELO",
+      "id": 42220,
+      "image_url":"https://assets.coingecko.com/coins/images/11090/small/InjXBNx9_400x400.jpg?1674707499",
+      "rpc_endpoint": "https://forno.celo.org",
+      "module": "0xFa6b8d14beb8D3D74805C410EeEe67234fe6AB13",
+      "gelato": "qw6_32acbe_4KOfGF9Ph1sOWWFACCx07vktRg5DKOIA_",
+      "gasPrice": "6"
+    },
+    {
+      "name": "Gnosis",
+      "litName": "xdai",
+      "gnosisName": "gnosis-chain",
+      "symbol": "xDai",
+      "id": 100,
+      "image_url":"https://assets.coingecko.com/coins/images/662/small/logo_square_simple_300px.png?1609402668",
+      "rpc_endpoint": "https://rpc.ankr.com/gnosis",
+      "module": "0xFa6b8d14beb8D3D74805C410EeEe67234fe6AB13",
+      "gelato": "qw6_32acbe_4KOfGF9Ph1sOWWFACCx07vktRg5DKOIA_",
+      "gasPrice": "1.1"
+    }
+  ]
+}
